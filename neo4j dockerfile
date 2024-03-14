@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  neo4j:
+    image: neo4j:community-ubi9
+    container_name: neo4j
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH}
